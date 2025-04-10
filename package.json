@@ -1,0 +1,13 @@
+{
+  "name": "forpractisejsandpython",
+  "version": "1.0.0",
+  "description": "for practising python and JS",
+  "main": "Anagrams.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node Anagrams.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
