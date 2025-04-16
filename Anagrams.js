@@ -207,3 +207,97 @@ let newarr = arr.reduce((acc,curr)=>{
 
 // console.log("ddd",newarr)
 }
+
+// Fiabonic serires
+
+{function FibonicSeries (num) {
+let result = [];
+for (let i=0;i<num;i++){
+    if (i==0){
+        result.push(0)
+    }else if (i==1){
+        result.push(1)
+    }else {
+        result.push(result[i-1]+result[i-2])
+    }
+}
+return result
+
+}
+
+// console.log("dddddddd",FibonicSeries(10))
+}
+
+// sorting of an array
+{
+let arr = [2,3,4,1,6,7]
+function sorted (arr) {
+    for (let i=0;i<arr.length;i++){
+        for (let j=0;j<arr.length;j++){
+            if (arr[i]<arr[j]){
+                let temp =arr[i]
+                arr[i]=arr[j]
+                arr[j]=temp
+            }
+        }
+    }
+    return arr
+
+}
+// console.log("dd",sorted(arr))
+}
+// sorting of an array of objects
+// const people = [
+//     { name: 'Eve', score: 88 },
+//     { name: 'Dave', score: null },
+//     { name: 'Alice', score: 95 },
+//     { name: 'Bob' } // score is undefined
+//   ];
+
+//   const sorted =(arr)=>  {
+    
+//     let key = 'score'
+//     return [...arr].sort((a,b)=>{
+    
+//         let valA = a[key]
+//         let valB =b[key]
+//         if (valA == null && valB == null) return 0;
+//         if (valA == null) return 1;
+//         if (valB == null) return -1;
+//         return valA>valB ? 1 : valB>valA ? -1:0
+//     })
+//   }
+// //   const sor = sorted(people,"score")
+  
+
+// sorting of two arrays
+{const a = [1, 3, 5];
+const b = [2, 4, 6, 8];
+
+function sortuing (arr1,arr2) {
+    let result =[]
+    let i=0
+    let j=0
+    let totallength = arr1.length+arr2.length;
+    for (let k=0;k<totallength;k++){
+        if (i>arr1.length){
+             result.push(arr2[j]);
+                j++;
+        }else if (j>arr2.length){
+            result.push(arr1[i]);
+            i++;
+        }else if(arr1[i]<arr2[j]) {
+            result.push(arr1[i])
+            i++
+        }else {
+            result.push(arr2[j])
+            j++
+        }
+        
+    }
+    return result
+    
+}
+
+// console.log("ddddd",sortuing(a,b))
+}
