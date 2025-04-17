@@ -301,3 +301,41 @@ function sortuing (arr1,arr2) {
 
 // console.log("ddddd",sortuing(a,b))
 }
+
+// for Pyramid like structure
+
+{function Pyramid (num) {
+    for (let i=1;i<num;i++){
+
+        let spaces = " ".repeat(num-i)
+        let stars = '*'.repeat(i*2-1)
+        console.log(spaces+stars)
+    }
+}
+
+Pyramid(5)
+}
+
+/// string balance
+
+function balancestringopenclose (str) {
+    let stack = []
+    let pairs = {
+        ')':'(',
+        '}':'{',
+        ']':'['
+    }
+
+    for (let char of str) {
+        if (Object.values(pairs).includes(char)){
+            stack.push(char)
+        } else if (Object.keys(pairs).includes(char)){
+            if (stack.pop() != pairs[char]){
+                return false
+            }
+        }
+    }
+    return stack.length === 0
+}
+
+// console.log(balancestringopenclose("{[]}"))
