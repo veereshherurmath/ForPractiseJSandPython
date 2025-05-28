@@ -313,9 +313,64 @@ function sortuing (arr1,arr2) {
     }
 }
 
-Pyramid(5)
+// Pyramid(5)
+}
+// reverse the string of an array
+{
+let str = ["ror", "Ram", "level", "Leave", "rotator", "demo", "madam", "sham"];
+
+function reversestr(str) {
+    let revstr = {}
+    for (let i=0;i<str.length;i++){
+        let element = str[i].split("")
+        let newarr =[]
+        for (let j=element.length-1;j>=0;j--){
+            newarr.push(element[j])
+        }
+        let rev = newarr.join("")
+        
+        if (str[i] == rev) {
+            
+            revstr[str[i]] = true
+        }else{
+            revstr[str[i]] =false
+        }
+        
+    }
+    return revstr
+    
 }
 
+// console.log(reversestr(str))
+}
+// remove numbers from a string
+{
+    let nam = "Veer1r32esh"
+
+function checkstring (str) {
+    let splitted = str.split("").filter(char=>isNaN(parseInt(char)))
+    return splitted.join("")
+}
+
+// console.log(checkstring(nam))
+}
+
+{
+    // sort the string based on the last number in the string
+let name = 'is2 this1 Veereh4 a3';
+const Strin=(str)=>{
+    
+    const sorting=str.split(" ").sort((a,b)=>a[a.length-1]-b[b.length-1])
+    
+    let newArr=[]
+    for(let i=0;i<sorting.length;i++){
+    const remove=sorting[i].split('').filter(ele=>isNaN(ele))
+        newArr.push(remove.join(''))
+    }
+    return newArr.join(' ')
+}
+console.log(Strin(name))
+}
 /// string balance
 
 function balancestringopenclose (str) {
@@ -339,3 +394,4 @@ function balancestringopenclose (str) {
 }
 
 // console.log(balancestringopenclose("{[]}"))
+

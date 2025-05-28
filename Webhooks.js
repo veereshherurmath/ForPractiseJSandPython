@@ -22,20 +22,20 @@
 
 // Function Debouncing
 
-const handleInput =(event) =>{
-    console.log("Input changed",event.target.value)
+const handleip = (arg)=>{
+    console.log(arg)
+
 }
 
-const handledebn = debounce(handleInput, 3000)
-
-debounce=(func,delay)=>{
-let timeout
-return (...args)=>{
-    clearTimeout(timeout)
-    timeout = setTimeout(()=>{
-        func(...args)
-    },delay)
-}
+const debounce = handledb(handleip,delay)
+debounce =(func,delay)=>{
+    let timeout
+    return (...args)=>{
+        clearTimeout(timeout)
+        timeout = setTimeout(()=>{
+            func(...args)
+        },delay)
+    }
 }
 
 // UseMemo hook 
