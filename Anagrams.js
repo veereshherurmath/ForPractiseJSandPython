@@ -395,3 +395,45 @@ function balancestringopenclose (str) {
 
 // console.log(balancestringopenclose("{[]}"))
 
+// K Position from the last
+function rotateRight(arr, k) {
+  let n = arr.length;
+  k = k % n; // handle k > n
+  console.log(arr.slice(-k),"ddddd")
+  return arr.slice(-k).concat(arr.slice(0, n - k));
+}
+
+// Example
+// console.log(rotateRight([1, 2, 3, 4, 5, 6, 7], 3));
+
+
+
+// remove banned word and higest digit word return
+
+const sentence = "Apple banana apple orange banana apple Mango banana.";
+const banned = "apple";
+
+const repetedword = (word,banned) =>{
+     const words = sentence
+    .toLowerCase()
+    .replace(/[^\w\s]/g, "") // remove punctuation
+    .split(" "); // split by spaces
+    
+    let freqMap = {}
+    for (let word of words) {
+    if (word === banned.toLowerCase()) continue;
+        
+    freqMap[word] = (freqMap[word] || 0) + 1;
+    
+  }
+    let repetedwords = {}
+    for (let resp in freqMap) {
+        if (freqMap[resp] > 1) {
+            repetedwords[resp]= freqMap[resp] 
+        }
+    }
+    return repetedwords;
+}
+
+// console.log(repetedword(sentence,banned))
+

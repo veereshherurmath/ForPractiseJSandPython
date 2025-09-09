@@ -25,6 +25,14 @@ function runFunc() {
   // console.log(parseInt('10+2'))=>'10
 //   console.log(parseInt('7FM'))
   // console.log(parseInt('M7F'))=>NaN
+  // console.log(typeof null)
+  // console.log(1<2<3)
+//   (function () {
+//     var a=b=3
+// })();
+// console.log(b)
+
+// console.log(!!"") =>false
   // console.log(isNaN('Ram'))=> true
   // console.log([1,2,3,0].map(num=>{  //=[ undefined, undefined, undefined, 0 ]
   //   if(num>0) return;
