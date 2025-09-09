@@ -437,3 +437,28 @@ const repetedword = (word,banned) =>{
 
 // console.log(repetedword(sentence,banned))
 
+
+// You want to find all pairs in an array that sum to zero.
+function findZeroSumPairs(arr) {
+arr.sort((a,b)=>a-b)
+let pairs = [];
+let left = 0,Right=arr.length-1;
+
+while(left<Right){
+    let sum = arr[left]+arr[Right]
+    if (sum ==0){
+        pairs.push([arr[left],arr[Right]])
+        left++;
+        Right++
+    }else if(sum<0){
+        left++;
+    }else {
+        Right--;
+    }
+}
+return pairs
+    
+}
+
+// console.log(findZeroSumPairs([2, -2, 3, -3, 4, 5, -4]));
+
