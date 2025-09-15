@@ -462,3 +462,130 @@ return pairs
 
 // console.log(findZeroSumPairs([2, -2, 3, -3, 4, 5, -4]));
 
+
+// For unique code 
+let arr = [1, 4, 5, 7, 11, 12];
+let target = 15;
+
+function targetvalue(arr,target){
+
+    let result=[];
+    let obj = new Set();
+    for (let i=0;i<arr.length;i++){
+        for (let j=0;j<arr.length;j++){
+            if (arr[i]+arr[j]===target) {
+                let pairing= [arr[i],arr[j]].sort();
+                let key=pairing(",")
+                if(!obj.has(key)){
+                    obj.add(key)
+                    result.push(pairing)
+                }
+            }
+        }
+    }
+    return result;
+
+}
+
+// console.log(targetvalue(arr,target))
+
+                    
+// Sorting of an array without using inbuilt function
+{let arr1 = [1, 4, 7, 8, 10];
+let arr2 = [2, 3, 9];
+function merge(arr1,arr2){
+    let m=arr1.length 
+    let n=arr2.length 
+    
+    let i=m-1  // 4
+    let j = 0 // 2
+    while(i>=0 && j<n) {   
+        if (arr1[i]>arr2[j]){
+            [arr1[i],arr2[j]]=[arr2[j],arr1[i]]
+        }
+        i--;
+        j++;
+    }
+    arr1.sort()
+    arr2.sort((a,b)=>a-b)
+    return [arr1,arr2]
+}
+let result = merge(arr1, arr2);
+
+// console.log(result)
+}
+// Output: [ [ 1, 2, 3, 4, 7 ], [ 8, 9, 10 ] ]
+
+
+// Longest substring without repeating characters
+
+{
+function firstNonRepeatingChar(str) {
+    let freq = {}
+    
+    for (let char of str){
+        freq[char] = (freq[char] ||0)+1
+    }
+    
+    for (let char of str) {
+        if (freq[char] == 1) {
+            return char
+        }
+        
+    }
+    return -1
+    
+}
+// console.log(firstNonRepeatingChar("swwisis"));   
+}
+
+// Output: "w"
+
+
+function lengthOfLongestSubstring(s){
+    let myMap = new Map()
+    let start =  0;
+    let maxlength = 0;
+    
+    for (let i=0;i<s.length;i++){
+        let char = s[i]
+        if (myMap.has(char) && myMap.get(char) >=start) {
+            start= (myMap.get(char) || 0)+1
+        }
+        
+        myMap.set(s[i],i)
+        console.log(maxlength,i,start)
+    maxlength = Math.max(maxlength,i-start+1)
+    }
+    
+    return maxlength
+    
+    
+}
+
+// console.log(lengthOfLongestSubstring("abcabcbb")); // 3
+// console.log(lengthOfLongestSubstring("bbbbb"));    // 1
+// console.log(lengthOfLongestSubstring("pwwkew"));   // 3
+
+{
+    function compressString (str) {
+    let comp ="";
+    let count = 1;
+     for (let i=1;i<=str.length;i++){
+         if (str[i]==str[i-1]){
+             count++;
+         }else {
+             comp+=str[i-1]+count;
+             count =1
+         }
+     }
+     return comp.length < str.length ? comp : str;
+}
+// Example
+// console.log(compressString("aaabb"));        // "a3b2"
+// console.log(compressString("abc"));          // "abc" 
+// console.log(compressString("aabcccccaaa"));  // "a2b1c5a3"
+
+}
+
+
