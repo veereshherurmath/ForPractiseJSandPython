@@ -631,6 +631,8 @@ function merge(left, right) {
 
 // console.log(mergeSort([4, 1, 7, 3, 2]));
 // [1, 2, 3, 4, 7]
-
+for (let i=0;i<10;i++){
+console.log(i)
+}
 }
 
