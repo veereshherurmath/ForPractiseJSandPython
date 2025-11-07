@@ -587,5 +587,50 @@ function lengthOfLongestSubstring(s){
 // console.log(compressString("aabcccccaaa"));  // "a2b1c5a3"
 
 }
+// find Maxmium sum subarray (kadane's algorithum)
+{
+    let arr = [-2,1,-3,4,-1,2,1,-5,4]
 
+function findsub (arr) {
+    let curr = arr[0]
+    let maxsum = arr[0]
+    for (let i=1;i<arr.length;i++){
+        curr = Math.max(arr[i],curr+arr[i])
+        maxsum = Math.max(maxsum,curr)
+    }
+    return maxsum
+}
+
+// console.log(findsub(arr))
+// o/p 6
+}
+// merging and Sort of two arrays
+
+{
+    function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+
+  return merge(left, right);
+}
+
+function merge(left, right) {
+  const result = [];
+  let i = 0, j = 0;
+
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) result.push(left[i++]);
+    else result.push(right[j++]);
+  }
+
+  return result.concat(left.slice(i)).concat(right.slice(j));
+}
+
+// console.log(mergeSort([4, 1, 7, 3, 2]));
+// [1, 2, 3, 4, 7]
+
+}
 

@@ -41,3 +41,28 @@ function runFunc() {
 }
 
 runFunc()
+
+{
+  // CLasses with inheritance
+  class Animal {
+    constructor(name){
+        this.name = name
+    }
+    speak(){
+        console.log(this.name + " makes the noise")
+    }
+}
+
+class Lion extends Animal {
+     speak() {
+    // super.speak();
+    console.log(this.name + ' roars ');
+  }
+}
+
+const animal = new Animal("dog")
+// animal.speak()
+
+const Lino = new Lion("SImba")
+// Lino.speak()
+}
